@@ -46,9 +46,12 @@ def format_base(value, base, digit_letters):
 	result = ""
 	abs_value = abs(value)
 	while abs_value != 0:
-		for i in range (3):
+		for i in range(0,4, -1):
+			if abs_value - base**i >= 0:
+				result += digit_letters[i]
+			else:
+				pass
 			abs_value - base**i
-			result += digit_letters[i]
 		pass
 	if value < 0:
 		result = "-" + result
